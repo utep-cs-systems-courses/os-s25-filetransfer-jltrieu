@@ -8,7 +8,7 @@ switchesVarDefaults = (
     (('-s', '--server'), 'server', "127.0.0.1:50000"),
     (('-d', '--delay'), 'delay', "0"),
     (('-?', '--usage'), "usage", False), # boolean (set if present)
-    (('-f', '--file'), 'file', "nets-tcp-file-transfer.py") # filename
+    (('-f', '--file'), 'file', "README.md") # filename
     )
 
 progname = "frameClient"
@@ -66,7 +66,9 @@ def createSocket(server):
     return s
 
 if file:
-    archive = frameFile(file).encode()
+    archive = frameFile(file)
+    print(archive)
+    archive = archive.encode()
 
 s = createSocket(server)
 
